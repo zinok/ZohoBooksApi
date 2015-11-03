@@ -232,7 +232,7 @@ class ZohoBooksApi
         curl_close($ch);
 
         // check http code
-        if (strval($this->lastRequest['httpCode'])[0] != '2') {
+        if (substr($this->lastRequest['httpCode'], 0, 1) != '2') {
             throw new ZohoBooksApiException('HTTP code "'.$this->lastRequest['httpCode'].'" - waiting for 2XX', 12);
         }
 
