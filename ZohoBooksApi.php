@@ -222,7 +222,7 @@ class ZohoBooksApi
 
         // check for timeout
         if ($this->lastRequest['dataRaw'] === false) {
-            throw new ZohoBooksApiException('request timed out ['.$fullURL.']', 11);
+            throw new ZohoBooksApiException('request timed out ['.$method.' '.$fullURL.']', 11);
         }
 
         // get httpCode
@@ -233,7 +233,7 @@ class ZohoBooksApi
 
         // check http code
         if (substr($this->lastRequest['httpCode'], 0, 1) != '2') {
-            throw new ZohoBooksApiException('HTTP code "'.$this->lastRequest['httpCode'].'" - waiting for 2XX ['.$fullURL.']', 12);
+            throw new ZohoBooksApiHttpException('HTTP code "'.$this->lastRequest['httpCode'].'" - waiting for 2XX', $this->lastRequest['httpCode']);
         }
 
         // if raw is true - stop here, do not do further decoding
@@ -373,6 +373,11 @@ class ZohoBooksApi
  * Exception class for ZohoBooks API Interface for network and general cases
  */
 class ZohoBooksApiException extends Exception {}
+
+/**
+ * Exception class for ZohoBooks API Interface for HTTP exceptions
+ */
+class ZohoBooksApiHttpException extends Exception {}
 
 /**
  * Exception class for ZohoBooks API Interface for non-zero zoho result code

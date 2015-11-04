@@ -100,6 +100,10 @@ Library defines own exceptions.
 Thrown if ZohoBooks returns non-zero return code. The code means that request has some 
 logical issue.
 
+### ZohoBooksApiHttpException
+
+Exception for HTTP non 2xx codes. The code of exception equals to HTTP return code.
+
 ### ZohoBooksApiException
 
 General exception. Thrown in case of incorrect method naming, non-2xx HTTP status code, 
