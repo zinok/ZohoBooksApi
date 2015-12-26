@@ -90,7 +90,7 @@ class ZohoBooksApi
     private $smartObjects = array(
         'Contacts', 'Estimates', 'SalesOrders', 'Invoices', 'RecurringInvoices', 'CreditNotes', 'CustomerPayments',
         'Expenses', 'RecurringExpenses', 'PurchaseOrders', 'Bills', 'VendorCredits', 'VendorPayments', 'BankAccounts',
-        'BankTransactions', 'ChartOfAccounts', 'Journals', 'Projects'
+        'BankTransactions', 'ChartOfAccounts', 'Journals', 'Projects', 'Items'
     );
 
     /**
