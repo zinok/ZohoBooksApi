@@ -27,6 +27,11 @@ list of allowed methods. It includes all general objects and typical actions: `L
 `Create`, `Update`, `Delete`. Plus magic action `ListAll`. As result constructor fills 
 internal `ZohoBooksApi::methods` array with list of allowed methods. 
 
+## For all non-common methods you can call it like:
+
+$api = new ZohoBooksApi($authToken, $orgId);
+$api->makeApiRequest('/invoices/:invoice_id:/email', 'POST', $parameters);
+
 ### Parameters
 
 Each method that has ID in the URL takes respective number of arguments. 
